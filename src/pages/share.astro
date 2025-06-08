@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/base-layout.astro';
+
+export const prerender = true;
+---
+
+<BaseLayout title="Compartir" className="max-h-screen min-h-screen flex flex-col items-center justify-center">
+  <script>
+    import { GOOGLE_PLAY_URL } from "@lib/constants";
+
+    window.onload = function() {
+        // Deep link to your app goes here
+        const frame = document.getElementById("l")
+        if (!frame) return;
+        (frame as HTMLIFrameElement).src = "com.servicard.servisalud://";
+
+        setTimeout(function() {
+            // Link to the App Store should go here -- only fires if deep link fails                
+            window.location = GOOGLE_PLAY_URL as any;
+        }, 500);
+    };
+  </script>
+  <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+</BaseLayout>

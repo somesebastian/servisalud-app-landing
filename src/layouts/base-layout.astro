@@ -1,0 +1,48 @@
+---
+import "./src/styles/global.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+const {
+	title = "ServiSalud | La App #1 de Salud en Venezuela",
+	className,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>{ title }</title>
+		<meta name="title" content={ title }>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+
+		<meta name="generator" content={ Astro.generator } />
+		<meta name="description" content="Encuentra y publica servicios médicos en toda Venezuela. Conecta pacientes y profesionales de la salud fácilmente. ¡Tu bienestar, a un clic!">
+		<meta name="keywords" content="servisalud, médicos venezuela, servicios médicos venezuela, citas médicas, salud venezuela, app salud, telemedicina venezuela, profesionales salud, pacientes venezuela, descargar app salud, directorio médico, emergencias médicas, bienestar venezuela">
+		<meta name="robots" content="index, follow">
+		<meta name="language" content="Spanish">
+		<meta name="author" content="ServiSalud">
+		
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@servisalud.app" />
+		<meta name="twitter:title" content="ServiSalud | La App #1 de Salud en Venezuela" />
+		<meta name="twitter:description" content="Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela." />
+		<meta name="twitter:image" content="https://servisalud.app/social/web-card.png" />
+
+		<meta property="og:site_name" content="ServiSalud" />
+		<meta property="og:title" content="ServiSalud | La App #1 de Salud en Venezuela" />
+		<meta property="og:description" content="Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela." />
+		<meta property="og:image" itemprop="image" content="https://servisalud.app/social/web-card.png">
+		<meta property="og:type" content="website" />
+	</head>
+	<body class={className}>
+		<slot />
+	</body>
+</html>

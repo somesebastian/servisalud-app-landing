@@ -1,22 +1,40 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import BaseLayout from "@layouts/base-layout.astro";
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const {
+	title = "ServiSalud | La App #1 de Salud en Venezuela",
+	className,
+	paddingBottom = undefined
+} = Astro.props;
+---
+
+<BaseLayout title={title} className="min-h-[120vh] flex flex-col">
+	<div id="site-load" class="opacity-100">
+		<div class="site-load-container">
+			<h1>Servi<span>Salud</span></h1>
+			<div class="load-bar">
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+		</div>
+	</div>
+	<Header />
+	<main class={"flex-1 pt-18" + (paddingBottom ? " pb-18" : "") + (className ? ` ${className}` : "")}>
+		<slot />
+	</main>
+	<Footer />
+	<script>
+		import { delay } from "@lib/time";
+
+		window.onload = async () => {
+			const siteLoad = document.getElementById("site-load");
+			if (!siteLoad) return;
+
+			siteLoad.className = "opacity-0";
+			await delay(400);
+			siteLoad.remove()
+		}
+	</script>
+</BaseLayout>

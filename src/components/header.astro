@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import { Button } from "@components/ui/button";
+import { MobileMenu } from "@components/mobile-menu";
+
+import BrandIcon from "@assets/servisalud.webp";
+
+import { GOOGLE_PLAY_URL } from "@lib/constants";
+---
+
+<header class="fixed top-0 z-40 w-full bg-white border border-white"> 
+  <div class="container mx-auto w-[90%] flex h-16 items-center justify-between">
+    <div class="flex items-center gap-2">
+      <Image
+        src={BrandIcon}
+        alt="ServiSalud Logo"
+        width={156}
+        height={156}
+        quality={100}
+        decoding="sync"
+        loading="eager"
+        class="rounded-md max-w-[32px] max-h-[32px]"
+      />
+      <h3 class="text-2xl text-primary font-bold">Servi<span class="font-medium">Salud</span></h3>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-6 text-lg font-medium *:hover:text-primary">
+      <a href="/#inicio">Inicio</a>
+      <a href="/#servicios">Servicios</a>
+      <a href="/#como-funciona">Cómo Funciona</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href="/#footer" aria-label="Contáctanos">
+        <Button variant="outline" size="sm" className="hidden md:flex">
+          Contacto
+        </Button>
+      </a>
+      <a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
+        <Button className="hidden md:flex">Descargar</Button>
+      </a>
+      <Button variant="ghost" size="icon" className="md:hidden">
+        <i class="bi-list" />
+        <span class="sr-only">Menú</span>
+      </Button>
+    </div>
+  </div>
+</header>

@@ -1,11 +1,180 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import Mockup from "@/components/mockup";
+import Layout from "@layouts/layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import GooglePlayBadge from "@assets/GooglePlayBadge.webp";
+import BrandIcon from "@assets/servisalud.webp";
+
+import { GOOGLE_PLAY_URL } from "@lib/constants";
+
+export const prerender = true;
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="ServiSalud | La App #1 de Salud en Venezuela" className="flex flex-col gap-12">
+	{/* Primera vista con grid layout */}
+	<section id="inicio" class="container relative text-center text-balance md:text-left pt-[45vh] md:pt-0 mx-auto max-w-[90%]"> 
+		<div class="bg-white flex flex-col justify-center md:order-[unset] order-2 md:grid grid-cols-6 grid-rows-2 gap-4 md:gap-0 mx-auto aspect-auto max-h-[80vh]">
+			{/* Sección principal (4x1) */}
+			<div class="col-span-4 row-span-1 border-0 md:border-b-2 border-primary rounded-xl md:rounded-none p-6 flex flex-col justify-center md:items-start items-center">
+				<h1 class="text-3xl md:text-4xl text-primary font-bold mb-4">
+					La App #1 de Salud en Venezuela
+				</h1>
+				<p class="text-muted-foreground text-lg mb-4 max-w-2xl">
+					Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela.
+					Busca especialistas, productos y promociones desde tu telefono.
+				</p>
+				<a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
+					<Image
+						src={GooglePlayBadge}
+						alt="Descarga en Google Play"
+						width={200}
+						height={60}
+						loading="lazy"
+						decoding="async"
+						class="object-contain bg-muted/50 rounded-md w-[200px] h-[60px]"
+					/>
+				</a>
+			</div>
+
+			{/* Sección vertical (2x2) */}
+			<div class="absolute -z-10 top-0 md:relative md:z-0 md:order-[unset] w-full h-[50vh] md:h-full order-1 col-span-2 row-span-2 rounded-xl md:rounded-3xl overflow-hidden flex justify-center md:justify-end select-none"> 
+				<Mockup client:load />
+				<span class="block md:hidden absolute inset-0 bg-gradient-to-t from-white from-10% to-transparent" />
+			</div>
+
+			{/* Sección (2x1) */}
+			<div class="bg-white col-span-2 row-span-1 md:order-[unset] order-3 border-0 md:border-r-2 border-primary rounded-xl md:rounded-none p-6 flex flex-col justify-end">
+				<h1 class="text-3xl md:text-4xl text-primary font-bold mb-2">Busca especialistas</h3>
+				<p class="text-lg text-muted-foreground">
+					Encuentra médicos por especialidad, ubicación o nombre en toda Venezuela.
+				</p>
+			</div>
+
+			{/* Sección (2x1) */}
+			<div class="bg-white col-span-2 row-span-1 md:order-[unset] order-4 rounded-xl md:rounded-none p-6 flex flex-col justify-end">
+				<h1 class="text-3xl md:text-4xl text-primary font-bold mb-2">Disfruta de promociones</h3>
+				<p class="text-lg text-muted-foreground">Obtén beneficios y descuentos exclusivos de todos nuestros afiliados.</p>
+			</div>
+		</div>
+	</section>
+
+	{/* Sección de servicios */}
+	<section id="servicios" class="bg-muted py-16">
+		<div class="container mx-auto max-w-[90%] sm:max-w-4/5 md:max-w-[90%]">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold mb-4">Nuestros Servicios</h2>
+				<p class="text-muted-foreground max-w-2xl mx-auto">
+					Servi<span class="font-medium">Salud</span> te ofrece una plataforma completa para todas tus necesidades médicas en Venezuela
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-card flex flex-col items-center text-center rounded-xl p-6 shadow-sm">
+					<div class="mb-4 bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+						<i class="bi-geo-alt-fill text-primary" />
+					</div>
+					<h3 class="text-xl font-bold mb-2 mt-0">Médicos cercanos</h3>
+					<p class="text-muted-foreground">
+						Encuentra especialistas cerca de tu ubicación en cualquier ciudad de Venezuela.
+					</p>
+				</div>
+
+				<div class="bg-card flex flex-col items-center text-center rounded-xl p-6 shadow-sm">
+					<div class="mb-4 bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+						<i class="bi-clock text-primary" />
+					</div>
+					<h3 class="text-xl font-bold mb-2 mt-0">Disponibilidad en tiempo real</h3>
+					<p class="text-muted-foreground">Consulta horarios disponibles y agenda citas inmediatamente.</p>
+				</div>
+
+				<div class="bg-card flex flex-col items-center text-center rounded-xl p-6 shadow-sm">
+					<div class="mb-4 bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+						<i class="bi-phone text-primary" />
+					</div>
+					<h3 class="text-xl font-bold mb-2 mt-0">Consultas virtuales</h3>
+					<p class="text-muted-foreground">
+						Conecta con médicos mediante videollamadas para consultas básicas.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{/* Sección de cómo funciona */}
+	<section id="como-funciona" class="py-16 container mx-auto max-w-[90%]">
+		<div class="text-center mb-12">
+			<h2 class="text-3xl font-bold mb-4">Cómo Funciona</h2>
+			<p class="text-muted-foreground max-w-2xl mx-auto">
+				En tres simples pasos podrás encontrar y agendar con los mejores especialistas
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+			<div class="text-center">
+				<div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="text-2xl font-bold text-primary">1</span>
+				</div>
+				<h3 class="text-xl font-bold mb-2 mt-0">Descarga la app</h3>
+				<p class="text-muted-foreground">
+					Disponible en Google Play para dispositivos Android.
+				</p>
+			</div>
+
+			<div class="text-center">
+				<div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="text-2xl font-bold text-primary">2</span>
+				</div>
+				<h3 class="text-xl font-bold mb-2 mt-0">Regístrate</h3>
+				<p class="text-muted-foreground">
+					Crea una cuenta totalmente gratis para acceder a todas las funcionalidades de la app.
+				</p>
+			</div>
+
+			<div class="text-center">
+				<div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+					<span class="text-2xl font-bold text-primary">3</span>
+				</div>
+				<h3 class="text-xl font-bold mb-2 mt-0">Agenda tu cita</h3>
+				<p class="text-muted-foreground">Selecciona el horario que prefieras y confirma tu reserva.</p>
+			</div>
+		</div>
+	</section>
+
+	{/* Sección de descarga */}
+	<section id="descargar" class="bg-primary text-primary-foreground py-16">
+		<div class="container mx-auto max-w-[90%]">
+			<div class="flex flex-col md:flex-row items-center md:justify-between text-center text-balance md:text-left gap-8"> 
+				<div class="md:w-1/2 md:order-1 order-2 flex flex-col items-center md:items-start">
+					<h2 class="text-3xl font-bold mb-4">Descarga Servi<span class="font-medium">Salud</span> ahora</h2>
+					<p class="mb-6 text-primary-foreground/90">
+						Accede a los mejores servicios médicos en Venezuela desde tu teléfono. Disponible para dispositivos
+						Android.
+					</p>
+					<a href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" class="w-fit">
+						<Image
+							src={GooglePlayBadge}
+							alt="Descarga en Google Play"
+							width={200}
+							height={60}
+							loading="lazy"
+							decoding="async"
+							class="object-contain bg-muted/50 rounded-md w-[200px] h-[60px]"
+						/>
+					</a>
+				</div>
+				<div class="w-1/2 md:w-1/4 mx-auto md:order-2 order-1">
+					<Image
+						src={BrandIcon}
+						alt="ServiSalud Logo"
+						width={400}
+						height={400}
+						loading="lazy"
+						decoding="async"
+						class="object-contain bg-muted/50 rounded-full w-full aspect-square"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>

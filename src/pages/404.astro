@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/layout.astro';
+
+export const prerender = true;
+---
+
+<Layout title="404 - Página no encontrada" className="flex flex-col items-center justify-center">
+	<section class="container mx-auto my-auto max-w-4xl py-16 md:py-32 text-center flex flex-col items-center justify-center gap-6">
+		<h1 class="text-6xl font-bold">¡Ups! Página no encontrada</h1>
+		<p class="text-lg text-muted-foreground">
+			Lo sentimos, la página que estás buscando no existe.<br />
+			Puedes volver a la <a class="font-semibold" href="/">página de inicio</a>.
+		</p>
+	</section>
+</Layout>

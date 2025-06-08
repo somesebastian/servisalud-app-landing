@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/layout.astro';
+
+export const prerender = true;
+---
+
+<Layout title="500 - Algo ha salido mal" className="flex flex-col items-center justify-center">
+	<section class="container mx-auto my-auto max-w-4xl py-16 md:py-32 text-center flex flex-col items-center justify-center gap-6">
+		<h1 class="text-6xl font-bold">¡Ups! Algo ha salido mal</h1>
+		<p class="text-lg text-muted-foreground">
+			Lo sentimos, hubo un error en el servidor. Estamos trabajando para solucionarlo.<br />
+			Puedes volver a la <a class="font-semibold" href="/">página de inicio</a>.
+		</p>
+	</section>
+</Layout>
