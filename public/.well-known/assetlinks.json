@@ -1,0 +1,14 @@
+[{
+  "relation": [
+    "delegate_permission/common.handle_all_urls",
+    "delegate_permission/common.get_login_creds"
+  ],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.servicard.servisalud",
+    "sha256_cert_fingerprints": [
+      "FA:95:1B:40:0E:FB:B9:FF:D6:CB:06:D2:D2:9D:6F:F1:BE:B8:49:79:A0:19:35:B3:64:31:7D:C1:96:9E:D2:D5",
+      "C9:4D:48:AA:8A:C9:F3:8B:02:C1:C2:1A:B2:3A:E6:3B:BF:23:FB:24:2E:BA:C7:BC:99:64:E0:B5:E1:65:44:51"
+    ]
+  }
+}]
