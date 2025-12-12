@@ -1,19 +1,20 @@
 {
-  "builds": [
+  "redirects": [
     {
-      "src": "dist/server/entry.mjs",
-      "use": "@vercel/node",
-      "config": {
-        "maxDuration": 10
-      }
+      "source": "/share/:id",
+      "destination": "https://play.google.com/store/apps/details?id=com.servicard.servisalud",
+      "permanent": false,
+      "statusCode": 302
+    },
+    {
+      "source": "/share/:id/:slug*",
+      "destination": "https://play.google.com/store/apps/details?id=com.servicard.servisalud",
+      "permanent": false,
+      "statusCode": 302
     }
   ],
-  "routes": [
-    {
-      "src": "/.*",
-      "dest": "dist/server/entry.mjs"
-    }
-  ],
+  "rewrites": [],
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
 }
