@@ -3,14 +3,10 @@ import { defineConfig } from 'astro/config';
 import path from 'path';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
-import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server', // Change to server
-  adapter: node({
-    mode: 'standalone'
-  }),
+  output: 'static', // Change to server
   vite: {
     resolve: {
       alias: {
