@@ -1,9 +1,19 @@
 {
+  "builds": [
+    {
+      "src": "dist/server/entry.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "maxDuration": 10
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "dist/server/entry.mjs"
+    }
+  ],
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/dist/server/entry.mjs" }
-  ]
+  "outputDirectory": "dist"
 }
