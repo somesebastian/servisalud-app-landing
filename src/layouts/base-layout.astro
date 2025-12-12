@@ -2,47 +2,160 @@
 import "./src/styles/global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const {
-	title = "ServiSalud | La App #1 de Salud en Venezuela",
-	className,
-} = Astro.props;
+const { title = "ServiSalud | La App #1 de Salud en Venezuela", className } =
+  Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>{ title }</title>
-		<meta name="title" content={ title }>
+    <title>{title}</title>
+    <meta name="title" content={title} />
 
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="https://www.servisalud.app/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="https://www.servisalud.app/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="https://www.servisalud.app/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="https://www.servisalud.app/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="60x60"
+      href="https://www.servisalud.app/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="120x120"
+      href="https://www.servisalud.app/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="76x76"
+      href="https://www.servisalud.app/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="https://www.servisalud.app/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.servisalud.app/favicon-196x196.png"
+      sizes="196x196"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.servisalud.app/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.servisalud.app/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.servisalud.app/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.servisalud.app/favicon-128.png"
+      sizes="128x128"
+    />
+    <meta name="application-name" content="ServiSalud" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://www.servisalud.app/mstile-144x144.png"
+    />
+    <meta
+      name="msapplication-square70x70logo"
+      content="https://www.servisalud.app/mstile-70x70.png"
+    />
+    <meta
+      name="msapplication-square150x150logo"
+      content="https://www.servisalud.app/mstile-150x150.png"
+    />
+    <meta
+      name="msapplication-wide310x150logo"
+      content="https://www.servisalud.app/mstile-310x150.png"
+    />
+    <meta
+      name="msapplication-square310x310logo"
+      content="https://www.servisalud.app/mstile-310x310.png"
+    />
 
-		<meta name="generator" content={ Astro.generator } />
-		<meta name="description" content="Encuentra y publica servicios médicos en toda Venezuela. Conecta pacientes y profesionales de la salud fácilmente. ¡Tu bienestar, a un clic!">
-		<meta name="keywords" content="servisalud, médicos venezuela, servicios médicos venezuela, citas médicas, salud venezuela, app salud, telemedicina venezuela, profesionales salud, pacientes venezuela, descargar app salud, directorio médico, emergencias médicas, bienestar venezuela">
-		<meta name="robots" content="index, follow">
-		<meta name="language" content="Spanish">
-		<meta name="author" content="ServiSalud">
-		
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@servisalud.app" />
-		<meta name="twitter:title" content="ServiSalud | La App #1 de Salud en Venezuela" />
-		<meta name="twitter:description" content="Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela." />
-		<meta name="twitter:image" content="https://servisalud.app/social/web-card.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-		<meta property="og:site_name" content="ServiSalud" />
-		<meta property="og:title" content="ServiSalud | La App #1 de Salud en Venezuela" />
-		<meta property="og:description" content="Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela." />
-		<meta property="og:image" itemprop="image" content="https://servisalud.app/social/web-card.png">
-		<meta property="og:type" content="website" />
-	</head>
-	<body class={className}>
-		<slot />
-	</body>
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Encuentra y publica servicios médicos en toda Venezuela. Conecta pacientes y profesionales de la salud fácilmente. ¡Tu bienestar, a un clic!"
+    />
+    <meta
+      name="keywords"
+      content="servisalud, médicos venezuela, servicios médicos venezuela, citas médicas, salud venezuela, app salud, telemedicina venezuela, profesionales salud, pacientes venezuela, descargar app salud, directorio médico, emergencias médicas, bienestar venezuela"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="author" content="ServiSalud" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@servisalud.app" />
+    <meta
+      name="twitter:title"
+      content="ServiSalud | La App #1 de Salud en Venezuela"
+    />
+    <meta
+      name="twitter:description"
+      content="Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela."
+    />
+    <meta
+      name="twitter:image"
+      content="https://servisalud.app/social/web-card.png"
+    />
+
+    <meta property="og:site_name" content="ServiSalud" />
+    <meta
+      property="og:title"
+      content="ServiSalud | La App #1 de Salud en Venezuela"
+    />
+    <meta
+      property="og:description"
+      content="Conectamos pacientes con médicos, clínicas y servicios de salud en toda Venezuela."
+    />
+    <meta
+      property="og:image"
+      itemprop="image"
+      content="https://servisalud.app/social/web-card.png"
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class={className}>
+    <slot />
+  </body>
 </html>

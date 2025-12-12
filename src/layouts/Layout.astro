@@ -4,37 +4,41 @@ import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
 
 const {
-	title = "ServiSalud | La App #1 de Salud en Venezuela",
-	className,
-	paddingBottom = undefined
+  title = "ServiSalud | La App #1 de Salud en Venezuela",
+  className,
+  paddingBottom = undefined,
 } = Astro.props;
 ---
 
 <BaseLayout title={title} className="min-h-[120vh] flex flex-col">
-	<div id="site-load" class="opacity-100">
-		<div class="site-load-container">
-			<h1>Servi<span>Salud</span></h1>
-			<div class="load-bar">
-				<div class="bar"></div>
-				<div class="bar"></div>
-			</div>
-		</div>
-	</div>
-	<Header />
-	<main class={"flex-1 pt-18" + (paddingBottom ? " pb-18" : "") + (className ? ` ${className}` : "")}>
-		<slot />
-	</main>
-	<Footer />
-	<script>
-		import { delay } from "@lib/time";
+  <div id="site-load" class="opacity-100">
+    <div class="site-load-container">
+      <h1>Servi<span>Salud</span></h1>
+      <div class="load-bar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+  <Header />
+  <main
+    class={"flex-1 pt-18" +
+      (paddingBottom ? " pb-18" : "") +
+      (className ? ` ${className}` : "")}
+  >
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    import { delay } from "@lib/time";
 
-		window.onload = async () => {
-			const siteLoad = document.getElementById("site-load");
-			if (!siteLoad) return;
+    window.onload = async () => {
+      const siteLoad = document.getElementById("site-load");
+      if (!siteLoad) return;
 
-			siteLoad.className = "opacity-0";
-			await delay(400);
-			siteLoad.remove()
-		}
-	</script>
+      siteLoad.className = "opacity-0";
+      await delay(400);
+      siteLoad.remove();
+    };
+  </script>
 </BaseLayout>

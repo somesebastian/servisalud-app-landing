@@ -1,14 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import { Button } from "@components/ui/button";
-import { MobileMenu } from "@components/mobile-menu";
-
-import BrandIcon from "@assets/servisalud.webp";
-
+import BrandIcon from "@assets/icon.webp";
 import { GOOGLE_PLAY_URL } from "@lib/constants";
 ---
 
-<header class="fixed top-0 z-40 w-full bg-white border border-white"> 
+<header class="fixed top-0 z-40 w-full bg-white border border-white">
   <div class="container mx-auto w-[90%] flex h-16 items-center justify-between">
     <div class="flex items-center gap-2">
       <Image
@@ -21,10 +18,14 @@ import { GOOGLE_PLAY_URL } from "@lib/constants";
         loading="eager"
         class="rounded-md max-w-[32px] max-h-[32px]"
       />
-      <h3 class="text-2xl text-primary font-bold">Servi<span class="font-medium">Salud</span></h3>
+      <h3 class="text-2xl text-primary font-bold">
+        Servi<span class="font-medium">Salud</span>
+      </h3>
     </div>
 
-    <nav class="hidden md:flex items-center gap-6 text-lg font-medium *:hover:text-primary">
+    <nav
+      class="hidden md:flex items-center gap-6 text-lg font-medium *:hover:text-primary"
+    >
       <a href="/#inicio">Inicio</a>
       <a href="/#servicios">Servicios</a>
       <a href="/#como-funciona">Cómo Funciona</a>
@@ -40,7 +41,7 @@ import { GOOGLE_PLAY_URL } from "@lib/constants";
         <Button className="hidden md:flex">Descargar</Button>
       </a>
       <Button variant="ghost" size="icon" className="md:hidden">
-        <i class="bi-list" />
+        <i class="bi-list"></i>
         <span class="sr-only">Menú</span>
       </Button>
     </div>

@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import BrandIcon from "@assets/servisalud.webp";
+import BrandIcon from "@assets/icon.webp";
 ---
 
 <footer class="border-t bg-muted" id="footer">
@@ -19,42 +19,29 @@ import BrandIcon from "@assets/servisalud.webp";
             loading="lazy"
             class="rounded-md max-w-[32px] max-h-[32px] bg-muted/50"
           />
-          <h3 class="text-2xl font-bold">Servi<span class="font-medium">Salud</span></h3>
+          <h3 class="text-2xl font-bold">
+            Servi<span class="font-medium">Salud</span>
+          </h3>
         </div>
         <p class="text-base">
           Conectando pacientes con servicios médicos en toda Venezuela.
         </p>
-        <div class="flex flex-row flex-wrap justify-left items-center gap-3 min-h-6 w-full *:max-w-12">
-          <a href="https://www.facebook.com/servisalud.app" aria-label="Facebook" class="flex-1 aspect-square bg-white border border-blue-600 rounded-full w-fit" />
-          <a href="https://www.instagram.com/servisalud.app" aria-label="Instagram" class="flex-1 aspect-square bg-white border border-rose-500 rounded-full w-fit" />
-          <a href="https://www.twitter.com/servisalud.app" aria-label="X (Twitter)" class="flex-1 aspect-square bg-white border border-neutral-950 rounded-full w-fit" />
-          <a href="https://www.tiktok.com/@servisalud.app" aria-label="TikTok" class="flex-1 aspect-square bg-white border border-neutral-950 rounded-full w-fit" />
-          <a href="https://www.linkedin.com/servisalud.app" aria-label="LinkedIn" class="flex-1 aspect-square bg-white border border-blue-600 rounded-full w-fit" />
-        </div>
       </div>
 
       <div>
         <h3 class="font-medium mb-3">Enlaces</h3>
         <ul class="space-y-2 text-base">
           <li>
-            <a href="/#inicio">
-              Inicio
-            </a>
+            <a href="/#inicio"> Inicio </a>
           </li>
           <li>
-            <a href="/#servicios">
-              Servicios
-            </a>
+            <a href="/#servicios"> Servicios </a>
           </li>
           <li>
-            <a href="/#como-funciona">
-              Cómo Funciona
-            </a>
+            <a href="/#como-funciona"> Cómo Funciona </a>
           </li>
           <li>
-            <a href="/#descargar">
-              Descargar
-            </a>
+            <a href="/#descargar"> Descargar </a>
           </li>
         </ul>
       </div>
@@ -63,7 +50,7 @@ import BrandIcon from "@assets/servisalud.webp";
         <h3 class="font-medium mb-3">Legal</h3>
         <ul class="space-y-2 text-base">
           <li>
-            <a href="/terms">
+            <a href="/terminos-y-condiciones-de-uso.pdf">
               Términos y Condiciones de Uso
             </a>
           </li>
@@ -73,14 +60,16 @@ import BrandIcon from "@assets/servisalud.webp";
       <div>
         <h3 class="font-medium mb-3">Contacto</h3>
         <ul class="space-y-2 text-base">
-          <li>soporte@servisalud.app</li>
+          <li>servisalud.app@gmail.com</li>
           <li>Caracas, Venezuela</li>
         </ul>
       </div>
     </div>
 
     <div class="border-t mt-8 pt-8 text-center text-base font-medium">
-      <p>© {new Date().getFullYear()} ServiSalud. Todos los derechos reservados.</p>
+      <p>
+        © {new Date().getFullYear()} ServiSalud. Todos los derechos reservados.
+      </p>
     </div>
   </div>
 </footer>
